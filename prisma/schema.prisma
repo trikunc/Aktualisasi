@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "postgresql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(cuid())
+  name      String?
+  nip       String    @unique
+  email     String?   @unique
+  passwords String?
+  role      Role      @default(USER)
+  image     String?
+  createdAt DateTime? @default(now())
+  updatedAt DateTime  @default(now()) @updatedAt
+}
+
+enum Role {
+  VISITOR
+  USER
+  ADMIN
+}
+
+model Asset {
+  id        String    @id @default(cuid())
+  name      String?
+  brand     String?
+  type      String?
+  dimension String?
+  material  String?
+  year      Int?
+  price     Int?
+  from      String?
+  condition Boolean
+  note      String?
+  createdAt DateTime? @default(now())
+  updatedAt DateTime  @default(now()) @updatedAt
+}
+
