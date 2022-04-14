@@ -9,7 +9,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Slamat Datang di Web BLKPP DIY
+          Selamat Datang di Web BLKPP DIY
         </h1>
 
         <p className={styles.description}>
