@@ -1,5 +1,20 @@
 .container {
-  padding: 0 2rem;
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.background {
+  filter: brightness(40%);
 }
 
 .main {
@@ -10,6 +25,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .footer {
