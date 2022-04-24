@@ -33,10 +33,13 @@ async function addBook(req, res) {
     type: body.type,
     dimension: body.dimension,
     material: body.material,
+    sum: body.sum,
     year: body.year,
     price: body.price,
     from: body.from,
     condition: body.condition,
+    goodCondition: body.goodCondition,
+    kejuruanId: body.kejuruanId,
     note: body.note
    }
   })

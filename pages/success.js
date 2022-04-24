@@ -27,8 +27,8 @@ export const getServerSideProps = async (context) => {
  if (role === "ADMIN") return {
   redirect: {
    permanent: false,
-   destination: `${RouteName.dashboard}`
-   // destination: `${`/dashboard`}`
+   // destination: `${RouteName.dashboard}`
+   destination: `${`/admin/dashboard`}`
   }
  }
 

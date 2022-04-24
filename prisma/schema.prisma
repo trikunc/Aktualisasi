@@ -32,18 +32,29 @@ enum Role {
 }
 
 model Asset {
-  id        String    @id @default(cuid())
-  name      String?
-  brand     String?
-  type      String?
-  dimension String?
-  material  String?
-  year      Int?
-  price     Int?
-  from      String?
-  condition Boolean
-  note      String?
-  kejuruan  String
+  id            String    @id @default(cuid())
+  name          String?
+  brand         String?
+  type          String?
+  dimension     String?
+  material      String?
+  sum           Int?
+  year          Int?
+  price         Int?
+  from          String?
+  condition     Boolean
+  goodCondition Int
+  note          String?
+  kejuruan      Kejuruan  @relation(fields: [kejuruanId], references: [id])
+  kejuruanId    Int
+  createdAt     DateTime? @default(now())
+  updatedAt     DateTime  @default(now()) @updatedAt
+}
+
+model Kejuruan {
+  id        Int       @id @default(autoincrement())
+  name      String
+  asset     Asset[]
   createdAt DateTime? @default(now())
   updatedAt DateTime  @default(now()) @updatedAt
 }

@@ -1,6 +1,13 @@
 const RouteName = {
  login: `/`,
- dashboard: `/dashboard`,
+ success: `/success`,
+
+ assetIndex: `/admin/asset`,
+ asset_tik1: `/admin/asset/Tik`,
+ asset_las: `/admin/asset/Pengelasan`,
+
+ dashboardIndex: `/admin/dashboard`,
+
 
 
  errorCode: {

@@ -31,7 +31,7 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className="h-screen w-screen bg-center bg-no-repeat bg-cover flex flex-col items-center justify-center relative">
       <Image
         className={styles.background}
         src={backgroundImg}
