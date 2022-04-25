@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import Bcrypt from 'bcrypt'
+// import Bcrypt from 'bcrypt'
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
@@ -30,7 +30,8 @@ export default NextAuth({
 
      if (!user) return null
 
-     let isSamePassword = Bcrypt.compareSync(credentials.password, user.passwords)
+     // let isSamePassword = Bcrypt.compareSync(credentials.password, user.passwords)
+     let isSamePassword = compareSync(credentials.password, user.passwords)
      if (!isSamePassword) return null
 
      return {

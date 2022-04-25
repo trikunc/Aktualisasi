@@ -1,5 +1,5 @@
 const { PrismaClient } = require('@prisma/client')
-const Bcrypt = require('bcrypt');
+// const Bcrypt = require('bcrypt');
 
 // import { links } from '../data/links'
 
@@ -8,17 +8,17 @@ const prisma = new PrismaClient()
 async function main() {
  await prisma.user.create({
   data: {
-   name: 'Superadmin 9',
-   nip: '199109232020121339',
+   name: 'Superadmin 1',
+   nip: '1991092320201011',
    email: `admin@blk9.com`,
-   passwords: Bcrypt.hashSync('password', 10),
+   passwords: 'password',
    role: 'ADMIN'
   }
  });
 
- await prisma.asset.createMany({
-  data: dataLinks
- });
+ // await prisma.asset.createMany({
+ //  data: dataLinks
+ // });
 }
 
 main()
