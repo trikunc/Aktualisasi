@@ -9,7 +9,7 @@ function CuttingSticker() {
    <Navbar />
    <div className="mt-28 rounded shadow w-[90%] p-8 bg-neutral-50">
     <h1 className="font-bold text-3xl">Prosedur Langkah Kerja</h1>
-    <h2 className="font-semibold text-2xl mt-2">Cutting Sticker</h2>
+    <h2 className="font-semibold text-2xl mt-2">Mesin Cutting Sticker</h2>
 
     <div className="w-full mt-8 flex justify-center items-center">
 

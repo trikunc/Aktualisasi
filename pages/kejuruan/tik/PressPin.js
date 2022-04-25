@@ -24,82 +24,65 @@ export default PressPin
 
 import Pic1 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture1.png'
 import Pic2 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture2.png'
-import Pic3 from '../../../public/assets/images/langkahKerja/tik/cuttingSticker/Picture3.png'
-import Pic4 from '../../../public/assets/images/langkahKerja/tik/cuttingSticker/Picture4.png'
-import Pic5 from '../../../public/assets/images/langkahKerja/tik/cuttingSticker/Picture5.png'
-import Pic6 from '../../../public/assets/images/langkahKerja/tik/cuttingSticker/Picture6.png'
-import Pic7 from '../../../public/assets/images/langkahKerja/tik/cuttingSticker/Picture7.png'
-import Pic8 from '../../../public/assets/images/langkahKerja/tik/cuttingSticker/Picture8.png'
-import Pic9 from '../../../public/assets/images/langkahKerja/tik/cuttingSticker/Picture9.png'
-import Pic10 from '../../../public/assets/images/langkahKerja/tik/cuttingSticker/Picture10.png'
-import Pic11 from '../../../public/assets/images/langkahKerja/tik/cuttingSticker/Picture11.png'
-import Pic12 from '../../../public/assets/images/langkahKerja/tik/cuttingSticker/Picture12.png'
-import Pic13 from '../../../public/assets/images/langkahKerja/tik/cuttingSticker/Picture13.png'
+import Pic3 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture3.png'
+import Pic4 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture4.png'
+import Pic5 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture5.png'
+import Pic6 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture6.png'
+import Pic7 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture7.png'
+import Pic8 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture8.png'
+import Pic9 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture9.png'
+import Pic10 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture10.png'
+
 
 const data = [
  {
   id: 1,
-  description: "Masukkan Jarum Pada Holder minimal 0,5 mm",
+  description: "Siapkan Moulding yang akan dipakai (4,4 cm atau 5,8 cm)",
   picture: Pic1,
  },
  {
   id: 2,
-  description: "Pasang kepada head holdernya",
+  description: "Pasang Handle Tangan",
   picture: Pic2,
  },
  {
   id: 3,
-  description: "Kunci head holder dengan memutar ulir kuncian ke arah jarum jam",
+  description: "Pasang Moulding Atas, Pastikan tuas masuk sesuai lubang",
   picture: Pic3,
  },
  {
   id: 4,
-  description: "Masukkan bahan cutting sticker ke dalam mesin cutting sticker",
+  description: "Pasang Rail / Dudukan Moulding, pastikan besi pengunci dinaikkan sewaktu memasang rail",
   picture: Pic4,
  },
  {
   id: 5,
-  description: "Kunci bagian belakang dengan cara menurunkan bagian pengunci sampai bunyi “click”",
+  description: "Pasang Moulding Bawah A dan B sesuai dengan Kode yang tertera di Rail",
   picture: Pic5,
  },
  {
   id: 6,
-  description: "Tekan tombol origin dan atur posisi 0 pada jarum holder",
+  description: "Pasang material pin berurutan mulai dari piringan seng, kertas yang telah di print, dan mika",
   picture: Pic6,
  },
  {
   id: 7,
-  description: "Masuk Software Corel X7, Setting area pada aplikasi sesuai dengan ukuran yang diinginkan",
+  description: "Arahkan ke posisi Moulding A",
   picture: Pic7,
  },
  {
   id: 8,
-  description: "Pilih Application Launcher dan pilih CutToolCDR",
+  description: "Tekan hingga tuas kebawah",
   picture: Pic8,
  },
  {
   id: 9,
-  description: "Pilih Icon cutter (kiri bawah) pada popup yang muncul",
+  description: "Pindahkan Rail ke Moulding B dan tekan sekali lagi",
   picture: Pic9,
  },
  {
   id: 10,
-  description: "Tekan Reset",
+  description: "Hasil akhir dari pin",
   picture: Pic10,
- },
- {
-  id: 11,
-  description: "Keluarkan bahan dan potong sesuai kebutuhan",
-  picture: Pic11,
- },
- {
-  id: 12,
-  description: "Pisahkan hasil yang mau dipakai dengan background",
-  picture: Pic12,
- },
- {
-  id: 13,
-  description: "Hasil cutting akhir",
-  picture: Pic13,
  },
 ]
