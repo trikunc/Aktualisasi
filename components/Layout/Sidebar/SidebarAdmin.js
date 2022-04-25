@@ -7,13 +7,13 @@ const SIDEBAR_TYPE_CHILD = 2
 
 let SidebarAdminData = [
  // DASHBOARD
- {
-  href: `${RouteName.dashboardIndex}`,
-  type: SIDEBAR_TYPE_PARENT_CHILDLESS,
-  title: "Dashboard",
-  icon: AddModerator,
-  routeGroup: []
- },
+ // {
+ //  href: `${RouteName.dashboardIndex}`,
+ //  type: SIDEBAR_TYPE_PARENT_CHILDLESS,
+ //  title: "Dashboard",
+ //  icon: AddModerator,
+ //  routeGroup: []
+ // },
  // ASET
  {
   href: `${RouteName.assetIndex}`,
@@ -21,12 +21,12 @@ let SidebarAdminData = [
   title: "Aset Kejuruan",
   icon: AddModerator,
   routeGroup: [
-   `${RouteName.asset_tik1}`,
-   `${RouteName.asset_tik2}`,
+   `${RouteName.asset_tik}`,
+   `${RouteName.asset_las}`,
   ],
   child: [
    {
-    href: `${RouteName.asset_tik1}`,
+    href: `${RouteName.asset_tik}`,
     type: SIDEBAR_TYPE_CHILD,
     title: "Kejuruan TIK",
     routeGroup: [

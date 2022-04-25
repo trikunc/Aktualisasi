@@ -3,6 +3,7 @@ import Layout from '../../../components/Layout'
 import prisma from '../../../prisma/lib'
 import { SearchInput } from '../../../components/Input'
 import TableAsset from '../../../components/Table/TableAsset'
+import { useRouter } from 'next/router'
 
 export const getServerSideProps = async ({ req, res }) => {
 
@@ -34,18 +35,19 @@ export const getServerSideProps = async ({ req, res }) => {
 }
 
 const Pengelasan = ({ data }) => {
- console.log('tes:', data)
  const [selectedFilter, setSelectedFilter] = useState(null)
  const [searchFilter, setSearchFilter] = useState('')
 
- const handleChange = (event) => {
-  setSelectedFilter(event.target.value);
- };
+ const router = useRouter()
 
- const __handleResetFilter = () => {
-  setSelectedFilter(null)
-  // TODO : Reset data
- }
+ // const handleChange = (event) => {
+ //  setSelectedFilter(event.target.value);
+ // };
+
+ // const __handleResetFilter = () => {
+ //  setSelectedFilter(null)
+ //  // TODO : Reset data
+ // }
 
  let filterPengajars = () => {
   if (!selectedFilter && searchFilter === '') return data
@@ -63,6 +65,10 @@ const Pengelasan = ({ data }) => {
    return value.name.toLowerCase().indexOf(searchFilter.toLowerCase()) > -1
   })
  }
+
+ const routeTo = '/admin/asset/Pengelasan'
+
+
 
 
 
@@ -87,7 +93,7 @@ const Pengelasan = ({ data }) => {
     </div>
 
     {/* <TableEntryPembelajaran data={filterPengajars()} pagefrom="index" /> */}
-    <TableAsset data={filterPengajars()} />
+    <TableAsset data={filterPengajars()} routeTo={routeTo} cb_update={(id) => updatePost(id)} />
    </div>
   </Layout>
  )

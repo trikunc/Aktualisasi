@@ -20,7 +20,8 @@ export default NextAuth({
       where: {
        // deleted: false,
        // OR: [{ username: credentials.email }, { email: credentials.email }]
-       email: credentials.email
+       // email: credentials.email
+       nip: credentials.nip
       }
      })
 

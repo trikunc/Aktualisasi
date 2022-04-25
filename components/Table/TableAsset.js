@@ -11,6 +11,7 @@ import { AssignmentReturned, Delete, Edit } from '@mui/icons-material';
 import { useContext, useState } from 'react';
 
 import RouteName from '../../utils/RouteName';
+import { useRouter } from 'next/router';
 
 
 const columns = [
@@ -114,9 +115,11 @@ const columns = [
 ];
 
 
-export default function TableAsset({ data, pagefrom, onEntryPembelajaranClicked, onEditPembelajaranNameClicked }) {
+export default function TableAsset({ data, routeTo }) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+
+  const router = useRouter()
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -127,27 +130,17 @@ export default function TableAsset({ data, pagefrom, onEntryPembelajaranClicked,
     setPage(0);
   };
 
-  const __handleDeletePembelajaran = async (id, name) => {
-    if (confirm(StringConstant.confirmDeletePembelajaran(name))) {
-      setLoading(true, StringConstant.pembelajaranDeleting, notificationDispatch)
-      let response = await PembelajaranRepo.deletePembelajaran(id)
-      setLoading(false, "", notificationDispatch)
-      setNotification({
-        isOpen: true,
-        message: response.success ? StringConstant.pembelajaranDeletingSuccess : response.message,
-        success: true,
-      }, notificationDispatch)
-
-      if (response.success) {
-        setTimeout(() => window.location.reload(), 1000)
-      }
-    }
+  async function deletePost(id) {
+    await fetch(`/api/asset/${id}`, {
+      method: 'DELETE',
+    });
+    router.push(routeTo)
   }
 
-  const __handleEntryPembelajaran = (row) => {
-    if (!onEntryPembelajaranClicked) return
-    return onEntryPembelajaranClicked(row)
+  const updateAsset = (id) => {
+    router.push(`/admin/asset/${id}`)
   }
+
 
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
@@ -198,11 +191,11 @@ export default function TableAsset({ data, pagefrom, onEntryPembelajaranClicked,
                           >
                             <div className="flex flex-col items-center justify-end ">
                               <Link href="/" passHref>
-                                <button className="rounded bg-actionred p-1 w-24 border hover:bg-blue-400 hover:text-white" >
+                                <button onClick={() => updateAsset(row.id)} className="rounded bg-actionred p-1 w-24 border hover:bg-blue-400 hover:text-white" >
                                   <Edit sx={{ fontSize: 18 }} /> Edit
                                 </button>
                               </Link>
-                              <button className="rounded bg-secondaryblue p-1 w-24 mr-1 ml-1 border hover:bg-red-500 hover:text-white" onClick={() => __handleDeletePembelajaran(row.id, row.pembelajaranName)}>
+                              <button onClick={() => deletePost(row.id)} className="rounded bg-secondaryblue p-1 w-24 mr-1 ml-1 border hover:bg-red-500 hover:text-white" >
                                 <Delete sx={{ fontSize: 18 }} /> Hapus
                               </button>
                             </div>

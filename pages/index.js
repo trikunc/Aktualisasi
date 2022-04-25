@@ -8,27 +8,11 @@ import Navbar from '../components/Navbar'
 import RouteName from '../utils/RouteName'
 import { useState } from 'react'
 import { useRouter } from 'next/router';
+import Link from 'next/link'
+// import Link from 'next/link'
 
 export default function Home() {
-  const [loginCredential, setLoginCredential] = useState('abdelwahab@prisma.io')
-  const [password, setPassword] = useState('password')
-
   const router = useRouter();
-
-  const __handleLogin = async () => {
-
-    let status = await signIn('credentials', {
-      redirect: false,
-      email: loginCredential,
-      password: password
-    })
-    console.log('status=> ', status)
-
-    if (status.ok) {
-      router.replace(`${RouteName.success}`)
-    }
-
-  }
 
   return (
     <div className="h-screen w-screen bg-center bg-no-repeat bg-cover flex flex-col items-center justify-center relative">
@@ -51,24 +35,18 @@ export default function Home() {
           Website ini digunakan untuk Aktualisasi Latsar CPNS 2022
         </p>
 
-        <button
-          type="submit"
-          onClick={__handleLogin}
-          className="w-full flex justify-center bg-topbar hover:bg-green-500 text-gray-100 p-3 rounded tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"
-        >
-          Login
-        </button>
 
         <div className="flex items-center justify-center flex-wrap max-w-[800px]">
-          <a href="https://nextjs.org/docs" className="m-4 p-6 text-left text-white no-underline border border-neutral-100 rounded-lg max-w-[300px] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+
+          {/* <Link href="/" className="m-4 p-6 text-left text-white no-underline border border-neutral-100 rounded-lg max-w-[300px] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" >
             <h2 className="text-2xl mb-4">Asset Digital</h2>
             <p className="text-xl">Aset baik berupa aset peralatan maupun non peralatan pelatihan</p>
-          </a>
+          </Link> */}
 
-          <a href="https://nextjs.org/docs" className="m-4 p-6 text-left text-white no-underline border border-neutral-100 rounded-lg max-w-[300px] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+          {/* <Link href="https://nextjs.org/docs" className="m-4 p-6 text-left text-white no-underline border border-neutral-100 rounded-lg max-w-[300px] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" >
             <h2 className="text-2xl mb-4">Prosedur Pelatihan</h2>
             <p className="text-xl">Langkah - langkah kerja penggunaan peralatan pelatihan</p>
-          </a>
+          </Link> */}
 
 
         </div>

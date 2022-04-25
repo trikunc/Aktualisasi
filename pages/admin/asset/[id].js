@@ -5,31 +5,36 @@ import { BootstrapInput } from '../../../components/Input'
 import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import { useRouter } from 'next/router'
 
-export const getServerSideProps = async ({ req, res }) => {
- const tes = await prisma.Asset.findMany()
+export const getServerSideProps = async ({ params }) => {
+ const post = await prisma.Asset.findUnique({
+  where: {
+   id: params?.id,
+  }
+ })
  const Kejuruan = await prisma.Kejuruan.findMany()
  return {
   props: {
-   data: JSON.parse(JSON.stringify(tes)),
    kejuruan: JSON.parse(JSON.stringify(Kejuruan)),
+   data: JSON.parse(JSON.stringify(post)),
   },
  }
 }
 
-const AddAsset = ({ kejuruan }) => {
- const [name, setName] = useState("");
- const [brand, setBrand] = useState("");
- const [type, setType] = useState("");
- const [dimension, setDimension] = useState("");
- const [material, setMaterial] = useState("");
- const [sum, setSum] = useState(0);
- const [year, setYear] = useState(2022);
- const [price, setPrice] = useState(0);
- const [from, setFrom] = useState("");
- const [condition, setCondition] = useState(true);
- const [goodCondition, setGoodCondition] = useState(0);
- const [kejuruanId, setKejuruanId] = useState(null);
- const [note, setNote] = useState("");
+const UpdateAsset = ({ kejuruan, data }) => {
+
+ const [name, setName] = useState(data.name);
+ const [brand, setBrand] = useState(data.brand);
+ const [type, setType] = useState(data.type);
+ const [dimension, setDimension] = useState(data.dimension);
+ const [material, setMaterial] = useState(data.material);
+ const [sum, setSum] = useState(data.sum);
+ const [year, setYear] = useState(data.year);
+ const [price, setPrice] = useState(data.price);
+ const [from, setFrom] = useState(data.from);
+ const [condition, setCondition] = useState(data.condition);
+ const [goodCondition, setGoodCondition] = useState(data.goodCondition);
+ const [kejuruanId, setKejuruanId] = useState(data.kejuruanId);
+ const [note, setNote] = useState(data.note);
 
  const router = useRouter()
 
@@ -51,8 +56,8 @@ const AddAsset = ({ kejuruan }) => {
     kejuruanId,
     note
    };
-   await fetch('/api/asset', {
-    method: 'POST',
+   await fetch(`/api/asset/${data.id}`, {
+    method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
    });
@@ -276,7 +281,7 @@ const AddAsset = ({ kejuruan }) => {
          <button onClick={submitData} className={`flex items-center justify-center rounded w-36 bg-green-500 text-white text-sm mx-3 mb-5 px-3 py-1`}
 
          >
-          Simpan Data
+          Update Data
          </button>
         </div>
        </div>
@@ -290,7 +295,7 @@ const AddAsset = ({ kejuruan }) => {
  )
 }
 
-export default AddAsset
+export default UpdateAsset
 
 const asalUsul = [
  { name: 'APBN' },

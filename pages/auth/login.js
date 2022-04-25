@@ -10,11 +10,11 @@ import Logo from '../../public/assets/icons/icon_yogyakarta.png'
 const Login = () => {
  const router = useRouter();
 
- const [email, setEmail] = useState('')
+ const [nip, setNip] = useState('')
  const [password, setPassword] = useState('')
 
- const handleEmail = (event) => {
-  setEmail(event.target.value);
+ const handleNip = (event) => {
+  setNip(event.target.value);
  };
  const handlePass = (event) => {
   setPassword(event.target.value);
@@ -24,7 +24,7 @@ const Login = () => {
 
   let status = await signIn('credentials', {
    redirect: false,
-   email: email,
+   nip: nip,
    password: password
   })
   console.log('status=> ', status)
@@ -55,9 +55,9 @@ const Login = () => {
      <TextField
       className="mb-8"
       id="outlined-name"
-      label="Email"
-      value={email}
-      onChange={handleEmail}
+      label="NIP"
+      value={nip}
+      onChange={handleNip}
       sx={{ width: '80%' }}
      />
 
@@ -65,6 +65,7 @@ const Login = () => {
       className="mb-8"
       id="outlined-name"
       label="Password"
+      type="password"
       value={password}
       onChange={handlePass}
       sx={{ width: '80%' }}

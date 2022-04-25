@@ -8,7 +8,11 @@ export default async function handler(req, res) {
   return await readBook(req, res)
  } else if (req.method === 'PUT') {
   return await updateBook(req, res)
- } else {
+ } else if (req.method === 'DELETE') {
+  return await deleteAsset(req, res)
+ }
+
+ else {
   return res.status(405).json({ message: 'Method not allowed', success: false })
  }
 }
@@ -57,6 +61,20 @@ async function updateBook(req, res) {
  } catch (error) {
   console.error('Request error', error)
   res.status(500).json({ error: 'Error adding book', success: false })
+ }
+}
+
+async function deleteAsset(req, res) {
+ const { pid } = req.query
+ try {
+  const post = await prisma.Asset.delete({
+   where: { id: pid },
+  });
+  console.log('deleteAsset==>', post)
+  res.status(200).json(post, { success: true })
+ } catch (error) {
+  console.log(error)
+  res.status(500).json({ error: 'Error Delete from database' }, { success: false })
  }
 }
 

@@ -37,10 +37,10 @@ function Header() {
           <Link className={styles.header__nav} href="/">
             ABOUT
           </Link>
-          <Link className={styles.header__nav} href="/">
+          <Link className={styles.header__nav} href="/kejuruan">
             KEJURUAN
           </Link>
-          <Link className={styles.header__nav} href="/">
+          <Link className={styles.header__nav} href="/auth/login">
             LOGIN
           </Link>
         </div>

@@ -3,6 +3,7 @@ import Layout from '../../../components/Layout'
 import prisma from '../../../prisma/lib'
 import { SearchInput } from '../../../components/Input'
 import TableAsset from '../../../components/Table/TableAsset'
+import { useRouter } from 'next/router'
 
 export const getServerSideProps = async ({ req, res }) => {
 
@@ -34,7 +35,6 @@ export const getServerSideProps = async ({ req, res }) => {
 }
 
 const TIK1 = ({ data }) => {
- console.log('tes:', data)
  const [selectedFilter, setSelectedFilter] = useState(null)
  const [searchFilter, setSearchFilter] = useState('')
 
@@ -63,6 +63,11 @@ const TIK1 = ({ data }) => {
    return value.name.toLowerCase().indexOf(searchFilter.toLowerCase()) > -1
   })
  }
+ const router = useRouter()
+ const handleClick = (e) => {
+  e.preventDefault()
+  router.push("/admin/asset/addAsset")
+ }
 
 
 
@@ -73,7 +78,7 @@ const TIK1 = ({ data }) => {
      Daftar Aset Laboratorium TIK
     </h2>
     <div className="flex justify-end">
-     <button className="flex items-center py-1 px-2 rounded bg-primarypurple border bg-[#9AECDB] hover:bg-green-500 hover:text-white text-sm">
+     <button onClick={handleClick} className="flex items-center py-1 px-2 rounded bg-primarypurple border bg-[#9AECDB] hover:bg-green-500 hover:text-white text-sm">
       + Tambah Aset baru
      </button>
     </div>
