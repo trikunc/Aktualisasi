@@ -13,7 +13,7 @@ function PressPin() {
 
     <div className="w-full mt-8 flex justify-center items-center">
 
-     <Table data={data} />
+     {/* <Table data={data} /> */}
     </div>
    </div>
   </div>
@@ -22,16 +22,16 @@ function PressPin() {
 
 export default PressPin
 
-// import Pic1 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture1.png'
-// import Pic2 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture2.png'
-// import Pic3 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture3.png'
-// import Pic4 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture4.png'
-// import Pic5 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture5.png'
-// import Pic6 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture6.png'
-// import Pic7 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture7.png'
-// import Pic8 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture8.png'
-// import Pic9 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture9.png'
-// import Pic10 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture10.png'
+import Pic1 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture1.png'
+import Pic2 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture2.png'
+import Pic3 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture3.png'
+import Pic4 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture4.png'
+import Pic5 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture5.png'
+import Pic6 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture6.png'
+import Pic7 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture7.png'
+import Pic8 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture8.png'
+import Pic9 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture9.png'
+import Pic10 from '../../../public/assets/images/langkahKerja/tik/PressPin/Picture10.png'
 
 
 const data = [
