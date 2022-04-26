@@ -30,7 +30,7 @@ const Login = () => {
   console.log('status=> ', status)
 
   if (status.ok) {
-   router.replace(`${RouteName.success}`)
+   router.replace(`${RouteName.asset_tik}`)
   }
 
  }
