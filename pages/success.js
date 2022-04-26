@@ -8,7 +8,6 @@ export const getServerSideProps = async (context) => {
 
  console.log('session: ', session)
  let role = session.user?.role
- console.log(role)
 
  if (!role) return {
   redirect: {
@@ -17,18 +16,13 @@ export const getServerSideProps = async (context) => {
   }
  }
 
- // if (roleId === Constant.USER_ROLE_REGULAR_SUPERADMIN) return {
- //     redirect: {
- //         permanent: false,
- //         destination: `${RouteName.pengajarIndex}`
- //     }
- // }
+
 
  if (role === "ADMIN") return {
   redirect: {
    permanent: false,
    // destination: `${RouteName.dashboard}`
-   destination: `${`/admin/dashboard`}`
+   destination: `${`/admin/asset/Tik`}`
   }
  }
 

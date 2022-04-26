@@ -1,5 +1,5 @@
 const RouteName = {
- login: `/`,
+ login: `/auth/login`,
  success: `/success`,
 
  assetIndex: `/admin/asset`,
