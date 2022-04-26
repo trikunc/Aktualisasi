@@ -68,6 +68,10 @@ const Pengelasan = ({ data }) => {
 
  const routeTo = '/admin/asset/Pengelasan'
 
+ const handleClick = (e) => {
+  e.preventDefault()
+  router.push("/admin/asset/addAsset")
+ }
 
 
 
@@ -79,7 +83,7 @@ const Pengelasan = ({ data }) => {
      Daftar Aset Bengkel Pengelasan
     </h2>
     <div className="flex justify-end">
-     <button className="flex items-center py-1 px-2 rounded bg-primarypurple border bg-[#9AECDB] hover:bg-green-500 hover:text-white text-sm">
+     <button onClick={handleClick} className="flex items-center py-1 px-2 rounded bg-primarypurple border bg-[#9AECDB] hover:bg-green-500 hover:text-white text-sm">
       + Tambah Aset baru
      </button>
     </div>
@@ -93,7 +97,7 @@ const Pengelasan = ({ data }) => {
     </div>
 
     {/* <TableEntryPembelajaran data={filterPengajars()} pagefrom="index" /> */}
-    <TableAsset data={filterPengajars()} routeTo={routeTo} cb_update={(id) => updatePost(id)} />
+    <TableAsset data={filterPengajars()} routeTo={routeTo} />
    </div>
   </Layout>
  )

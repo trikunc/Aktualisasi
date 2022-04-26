@@ -45,6 +45,7 @@ const TIK1 = ({ data }) => {
   })
  }
  const router = useRouter()
+ const routeTo = '/admin/asset/Tik'
  const handleClick = (e) => {
   e.preventDefault()
   router.push("/admin/asset/addAsset")
@@ -71,7 +72,7 @@ const TIK1 = ({ data }) => {
     </div>
 
     {/* <TableEntryPembelajaran data={filterPengajars()} pagefrom="index" /> */}
-    <TableAsset data={filterPengajars()} />
+    <TableAsset data={filterPengajars()} routeTo={routeTo} />
    </div>
   </Layout>
  )
