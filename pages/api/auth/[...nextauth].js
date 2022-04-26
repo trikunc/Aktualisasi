@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import Bcrypt from 'bcrypt'
+// import Bcrypt from 'bcrypt'
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
