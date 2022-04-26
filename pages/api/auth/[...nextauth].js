@@ -54,7 +54,7 @@ export default NextAuth({
  },
  secret: 'cobaduluaja',
  pages: {
-  signIn: '/'
+  signIn: '/auth/login/'
  },
  callbacks: {
   async jwt({ token, user }) {

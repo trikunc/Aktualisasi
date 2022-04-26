@@ -22,7 +22,7 @@ function PressPin() {
 
 export default PressPin
 
-import Pic1 from '../../../public/assets/images/langkahKerja/tik/cuttingSticker/Picture1.png'
+import Pic1 from '../../../public/assets/images/langkahKerja/tik/pressPin/Picture1.png'
 import Pic2 from '../../../public/assets/images/langkahKerja/tik/pressPin/Picture2.png'
 import Pic3 from '../../../public/assets/images/langkahKerja/tik/pressPin/Picture3.png'
 import Pic4 from '../../../public/assets/images/langkahKerja/tik/pressPin/Picture4.png'
