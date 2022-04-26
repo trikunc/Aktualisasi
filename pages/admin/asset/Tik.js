@@ -11,26 +11,7 @@ export const getServerSideProps = async ({ req, res }) => {
   where: {
    kejuruanId: 1,
   },
- }
- )
- // const data = await tes.json()
- // console.log(data)
- // const test = json(test2)
- // let session = await getSession(context)
- // let pengajars = await PengajarFunction.getAllPengajar()
- // let fungsionals = await FunctionalFunction.getAllFunctional()
- // let pembelajarans = await PembelajaranFunction.getAllPembelajaran()
-
- // console.log(pembelajarans)
-
- // return {
- //  props: {
- //   user: session.user,
- //   pengajars,
- //   fungsionals,
- //   pembelajarans
- //  }
- // }
+ })
  return { props: { data: JSON.parse(JSON.stringify(tes)) } }
 }
 
@@ -68,8 +49,6 @@ const TIK1 = ({ data }) => {
   e.preventDefault()
   router.push("/admin/asset/addAsset")
  }
-
-
 
  return (
   <Layout>
