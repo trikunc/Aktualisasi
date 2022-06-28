@@ -39,8 +39,15 @@ let SidebarAdminData = [
      // RouteName.pembelajaranEditJadwalById(``)
     ],
    },
-
   ]
+ },
+
+ {
+  href: `${RouteName.controlIndex}`,
+  type: SIDEBAR_TYPE_PARENT_CHILDLESS,
+  title: "Controlling",
+  routeGroup: [
+  ],
  },
 
 ]

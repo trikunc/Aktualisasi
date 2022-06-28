@@ -7,7 +7,6 @@ import SidebarContainer from './Sidebar/SidebarContainer';
 // import SidebarUser from './Sidebar/SidebarUser';
 
 const SidebarHardCode = ({ user }) => {
-  console.log("User==> ", user);
   return (
     <>
       {SidebarAdminData.map((item, index) => {

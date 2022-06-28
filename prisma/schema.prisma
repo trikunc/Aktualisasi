@@ -46,15 +46,53 @@ model Asset {
   goodCondition Int
   note          String?
   kejuruan      Kejuruan  @relation(fields: [kejuruanId], references: [id])
-  kejuruanId    Int
+  kejuruanId    String
   createdAt     DateTime? @default(now())
   updatedAt     DateTime  @default(now()) @updatedAt
 }
 
 model Kejuruan {
-  id        Int       @id @default(autoincrement())
+  id        String    @id @default(cuid())
   name      String
   asset     Asset[]
+  createdAt DateTime? @default(now())
+  updatedAt DateTime  @default(now()) @updatedAt
+}
+
+model Ropk {
+  id            String       @id @default(cuid())
+  month         Month        @relation(fields: [monthId], references: [id])
+  monthId       String
+  Subkegiatan   Subkegiatan? @relation(fields: [subkegiatanId], references: [id])
+  subkegiatanId String?
+  rekening      String?
+  nominal       Int?
+  createdAt     DateTime?    @default(now())
+  updatedAt     DateTime     @default(now()) @updatedAt
+}
+
+model Subkegiatan {
+  id         String    @id @default(cuid())
+  name       String
+  Kegiatan   Kegiatan? @relation(fields: [kegiatanId], references: [id])
+  kegiatanId String?
+  ropk       Ropk[]
+  createdAt  DateTime? @default(now())
+  updatedAt  DateTime  @default(now()) @updatedAt
+}
+
+model Kegiatan {
+  id        String        @id @default(cuid())
+  name      String
+  ropk      Subkegiatan[]
+  createdAt DateTime?     @default(now())
+  updatedAt DateTime      @default(now()) @updatedAt
+}
+
+model Month {
+  id        String    @id @default(cuid())
+  name      String
+  ropk      Ropk[]
   createdAt DateTime? @default(now())
   updatedAt DateTime  @default(now()) @updatedAt
 }

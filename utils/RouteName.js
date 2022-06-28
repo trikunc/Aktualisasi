@@ -6,6 +6,9 @@ const RouteName = {
  asset_tik: `/admin/asset/Tik`,
  asset_las: `/admin/asset/Pengelasan`,
 
+ controlIndex: `/admin/ControlROPK`,
+
+
  dashboardIndex: `/admin/dashboard`,
 
 

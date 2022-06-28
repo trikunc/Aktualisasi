@@ -25,9 +25,6 @@ export default NextAuth({
       }
      })
 
-     console.log('user==> ', user)
-     console.log("credentials==> ", credentials)
-
      if (!user) return null
 
      // let isSamePassword = Bcrypt.compareSync(credentials.password, user.passwords)

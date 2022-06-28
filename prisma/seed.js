@@ -8,10 +8,10 @@ const prisma = new PrismaClient()
 async function main() {
  await prisma.user.create({
   data: {
-   name: 'Superadmin 1',
-   nip: '1991092320201011',
-   email: `admin@blk9.com`,
-   passwords: 'password',
+   name: 'Fathania',
+   nip: '200008032022012002',
+   email: `nia@blk.com`,
+   passwords: 'ngawur',
    role: 'ADMIN'
   }
  });

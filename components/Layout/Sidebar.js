@@ -8,7 +8,6 @@ import RouteName from '../../utils/RouteName';
 import SidebarHardCode from './SidebarHardCode';
 
 const Sidebar = ({ navSide, navTop, callBack, height, user }) => {
-  console.log("user=>", user);
   return (
     <div
       className="min-w-full md:min-w-[30%] lg:min-w-0 h-screen bg-sidebar sticky inset-y-0 left-0 transform  md:relative md:translate-x-0 transition duration-500 ease-in-out overflow-hidden shadow bg-neutral-50"

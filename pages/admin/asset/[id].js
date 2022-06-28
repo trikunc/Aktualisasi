@@ -6,12 +6,12 @@ import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/mater
 import { useRouter } from 'next/router'
 
 export const getServerSideProps = async ({ params }) => {
+ console.log("params==>", params)
  const post = await prisma.Asset.findUnique({
   where: {
    id: params?.id,
   }
  })
- const Kejuruan = await prisma.Kejuruan.findMany()
  return {
   props: {
    kejuruan: JSON.parse(JSON.stringify(Kejuruan)),

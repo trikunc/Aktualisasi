@@ -9,7 +9,7 @@ export const getServerSideProps = async ({ req, res }) => {
 
  const tes = await prisma.Asset.findMany({
   where: {
-   kejuruanId: 2,
+   kejuruanId: "2",
   },
  }
  )

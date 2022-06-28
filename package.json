@@ -1,9 +1,6 @@
 {
   "name": "blkpp-asset",
   "version": "0.1.0",
-  "engines": {
-    "node": "16.14.2"
-  },
   "cacheDirectories": [
     ".next/cache"
   ],

@@ -37,6 +37,9 @@ function Header() {
           <Link className={styles.header__nav} href="/">
             ABOUT
           </Link>
+          <Link className={styles.header__nav} href="/controlling">
+            KONTROL
+          </Link>
           <Link className={styles.header__nav} href="/kejuruan">
             KEJURUAN
           </Link>
