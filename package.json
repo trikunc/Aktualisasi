@@ -10,7 +10,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "babel src -d lib",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -25,7 +25,7 @@
     "@mui/styled-engine-sc": "^5.6.1",
     "@next-auth/prisma-adapter": "^1.0.3",
     "@prisma/client": "^3.12.0",
-    "next": "12.1.4",
+    "next": "^12.1.7-canary.52",
     "next-auth": "^4.3.2",
     "react": "18.0.0",
     "react-dom": "18.0.0",
