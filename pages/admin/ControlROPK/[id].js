@@ -61,7 +61,7 @@ const AddRopk = ({ data, kegiatan, subkegiatan, month }) => {
     setKegiatanId(subkegiatan[i].kegiatanId)
    }
   }
- }, [])
+ }, [data.subkegiatanId, subkegiatan])
 
 
  let filterSubKegiatan = () => {

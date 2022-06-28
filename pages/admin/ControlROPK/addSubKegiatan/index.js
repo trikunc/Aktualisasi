@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Layout from '../../../../../components/Layout'
-import prisma from '../../../../../prisma/lib'
-import { BootstrapInput } from '../../../../../components/Input'
+import Layout from '../../../../components/Layout'
+import prisma from '../../../../prisma/lib'
+import { BootstrapInput } from '../../../../components/Input'
 import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import { useRouter } from 'next/router'
 

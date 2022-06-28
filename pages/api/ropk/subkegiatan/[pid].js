@@ -58,7 +58,7 @@ async function deleteSubkegiatan(req, res) {
  const { pid } = req.query
  try {
   const post = await prisma.Subkegiatan.delete({
-   where: { id: parseInt(pid) },
+   where: { id: pid },
   });
   console.log('deleteSubkegiatan==>', post)
   res.status(200).json(post, { success: true })
