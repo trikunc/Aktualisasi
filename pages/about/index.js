@@ -5,41 +5,10 @@ import Navbar from '../../components/Navbar'
 import TableRopkControll from '../../components/Table/TabelRopkControll'
 
 
-const About = ({ data, kegiatan, subkegiatan, month }) => {
- const [selectedFilter, setSelectedFilter] = useState(null)
- const [searchFilter, setSearchFilter] = useState('')
- let monthCheck = moment().format('M');
+const About = () => {
 
- let sortMonth = month.sort(function (a, b) {
-  return a.id - b.id || a.name.localeCompare(b.name);
- });
-
-
- let filterPengajars = () => {
-  if (!selectedFilter && searchFilter === '') return data
-  let filtered = data
-
-  if (selectedFilter) {
-   filtered = data.filter((value) => {
-    return value.name === selectedFilter
-   })
-  }
-
-  if (searchFilter === '') return filtered
-
-  return filtered.filter((value) => {
-   return value.name.toLowerCase().indexOf(searchFilter.toLowerCase()) > -1
-  })
- }
-
- const divRef = useRef(null);
-
- useEffect(() => {
-  divRef.current.scrollIntoView({ behavior: 'smooth' });
- });
- // console.log("data: ", data)
  return (
-  <div className=" w-screen bg-[#f5cd79]/50 bg-center bg-no-repeat bg-cover flex flex-col relative" ref={divRef}>
+  <div className=" w-screen bg-[#f5cd79]/50 bg-center bg-no-repeat bg-cover flex flex-col relative">
    {/* <NavMin /> */}
    <Navbar light={true} />
    <div className="mt-10 flex flex-col items-center font-serif">
