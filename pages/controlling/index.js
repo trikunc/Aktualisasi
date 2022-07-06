@@ -33,6 +33,8 @@ const Control = ({ data, kegiatan, subkegiatan, month }) => {
  const [searchFilter, setSearchFilter] = useState('')
  let monthCheck = moment().format('M');
 
+ console.log("monthCheck==> ", monthCheck)
+
  let sortMonth = month.sort(function (a, b) {
   return a.id - b.id || a.name.localeCompare(b.name);
  });
@@ -66,7 +68,7 @@ const Control = ({ data, kegiatan, subkegiatan, month }) => {
    {/* <NavMin /> */}
    <Navbar light={true} />
    <div className="mt-10 flex flex-col items-center font-serif">
-    <h1 className="mb-4 font-extrabold text-5xl z-50">{sortMonth[parseInt(monthCheck)].name}</h1>
+    <h1 className="mb-4 font-extrabold text-5xl z-50">{sortMonth[parseInt(monthCheck) - 1].name}</h1>
     <TableRopkControll data={filterPengajars()} kegiatan={kegiatan} subkegiatan={subkegiatan} month={sortMonth} />
    </div>
   </div>
