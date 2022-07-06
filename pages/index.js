@@ -18,7 +18,7 @@ export default function Home() {
         objectFit="cover"
         quality={100}
       />
-      <Navbar />
+      <Navbar light={false} />
 
       <div className={styles.main}>
         <h1 className="text-white text-6xl">

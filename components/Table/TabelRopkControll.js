@@ -51,7 +51,7 @@ const columns = [
   {
     id: 'nominal',
     label: 'Nominal',
-    width: '10%',
+    width: '5%',
     marginHorizontal: 5,
     align: 'center',
   },
@@ -139,10 +139,6 @@ export default function TableRopkControll({ data, kegiatan, subkegiatan, month }
       }
     }
   }
-  console.log("newData3 ==> ", newData3)
-
-
-
 
 
   const handleChangePage = (event, newPage) => {
@@ -164,30 +160,53 @@ export default function TableRopkControll({ data, kegiatan, subkegiatan, month }
   const updateAsset = (id) => {
     router.push(`/admin/ropk/${id}`)
   }
+  // let toStr = z.split('')
+  // console.log("toStr ==", toStr)
+  // console.log("toStr length ==", toStr.length)
+  // let value = ""
+  // let x = 0
+  // for (let i = toStr.length; i > 0; i--) {
+
+  //   if ((i + 1) % 3 == 0) {
+  //     value.slice(i, ".")
+  //     console.log("nomor---", i)
+  //   }
+  //   value.slice(0, toStr[toStr.length - i])
+  //   console.log("value 333==> ", value)
+
+  // }
+
+  function format(x) {
+
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return parts.join(",");
+  }
+
 
 
   return (
     <div>
       {newData3.map((item, index) => {
         return (
-          <div key={index} className="m-4 w-screen">
-            <div className="flex justify-center text-bold text-2xl">
+          <div key={index} className="m-4 pt-6 w-screen">
+            <div className="flex justify-center font-bold text-2xl">
               Kegiatan: {item.kegiatan}
             </div>
             {item.subkegiatan.map((item2, index2) => {
               return (
                 <div key={index2} className="px-14 ">
-                  <div className="text-bold text-xl border-b-2 mt-4">
+                  <div className="font-semibold text-xl border-b-2 border-black mt-4">
                     Subkegiatan: {item2.subkegiatan}
                   </div>
                   {item2.rekening.map((item3, index3) => {
                     return (
                       <div key={index3} className="flex flex-row w-full">
-                        <div className="border-r-2 border-l-2 border-b-2 w-[70%] px-2">
+                        <div className="text-xl border-r-2 border-l-2 border-b-2 border-black w-[85%] px-2">
                           {item3.rekening}
                         </div>
-                        <div className="border-r-2 border-b-2 w-[30%]">
-                          {item3.nominal}
+                        <div className="text-xl border-r-2 border-b-2 border-black w-[15%] px-2 flex items-center justify-end">
+                          {format(item3.nominal)}
                         </div>
                       </div>
                     )

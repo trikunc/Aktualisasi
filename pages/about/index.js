@@ -3,32 +3,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import NavMin from '../../components/Navbar/NavMin'
 import Navbar from '../../components/Navbar'
 import TableRopkControll from '../../components/Table/TabelRopkControll'
-import prisma from '../../prisma/lib'
-
-export const getServerSideProps = async ({ req, res }) => {
- let monthCheck = moment().format('M');
-
- let month = parseInt(monthCheck) + 1
- const tes = await prisma.Ropk.findMany({
-  where: {
-   monthId: `${month}`,
-  },
- })
- const Month = await prisma.Month.findMany()
- const Kegiatan = await prisma.Kegiatan.findMany()
- const Subkegiatan = await prisma.Subkegiatan.findMany()
- return {
-  props: {
-   data: JSON.parse(JSON.stringify(tes)),
-   kegiatan: JSON.parse(JSON.stringify(Kegiatan)),
-   subkegiatan: JSON.parse(JSON.stringify(Subkegiatan)),
-   month: JSON.parse(JSON.stringify(Month)),
-  },
- }
-}
 
 
-const Control = ({ data, kegiatan, subkegiatan, month }) => {
+const About = ({ data, kegiatan, subkegiatan, month }) => {
  const [selectedFilter, setSelectedFilter] = useState(null)
  const [searchFilter, setSearchFilter] = useState('')
  let monthCheck = moment().format('M');
@@ -66,11 +43,14 @@ const Control = ({ data, kegiatan, subkegiatan, month }) => {
    {/* <NavMin /> */}
    <Navbar light={true} />
    <div className="mt-10 flex flex-col items-center font-serif">
-    <h1 className="mb-4 font-extrabold text-5xl z-50">{sortMonth[parseInt(monthCheck)].name}</h1>
-    <TableRopkControll data={filterPengajars()} kegiatan={kegiatan} subkegiatan={subkegiatan} month={sortMonth} />
+    <h1 className="mb-4 font-extrabold text-5xl z-50">Balai Latihan Kerja dan Pengembangan Produktivitas (BLKPP) DIY</h1>
+    <h3>Dinas Tenaga Kerja dan Transmigrasi berdasarkan Peraturan Gubernur (PERGUB) nomor 92 tahun 2018  memiliki Unit  Pelaksana  Teknis  yang  selanjutnya  disingkat  UPT, salah satunya adalah Balai Latihan Kerja dan Pengembangan Produktivitas (BLKPP).
+    </h3>
+    <h3>BLKPP mempunyai tugas melaksanakan tugas teknis operasional dan/atau kegiatan teknis penunjang tertentu dinas tenaga kerja dan transmigrasi di bidang pelatihan kerja dan pengembangan produktivitas tenaga kerja untuk meningkatkan persentase jumlah lulusan pelatihan yang terampil.
+    </h3>
    </div>
   </div>
  )
 }
 
-export default Control
+export default About

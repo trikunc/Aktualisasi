@@ -5,7 +5,7 @@ import Image from 'next/image';
 import useWindowSize from '../../utils/valueSize'
 import yogyaIcon from '../../public/assets/icons/icon_yogyakarta.png'
 
-function Header() {
+function Header({ light }) {
 
   const size = useWindowSize();
   console.log(size);
@@ -32,18 +32,21 @@ function Header() {
       <div className={styles.header__links}>
         <div
           className={styles.header__links}
-          style={{ fontSize: valueSize * 0.023 }}
+          style={{
+            fontSize: valueSize * 0.023,
+            color: light ? 'black' : 'white',
+          }}
         >
-          <Link className={styles.header__nav} href="/">
+          <Link className="no-underline font-medium text-lg text-center" href="/">
             ABOUT
           </Link>
-          <Link className={styles.header__nav} href="/controlling">
+          <Link className="no-underline font-medium text-lg text-center" href="/controlling">
             KONTROL
           </Link>
-          <Link className={styles.header__nav} href="/kejuruan">
+          <Link className="no-underline font-medium text-lg text-center" href="/kejuruan">
             KEJURUAN
           </Link>
-          <Link className={styles.header__nav} href="/auth/login">
+          <Link className="no-underline font-medium text-lg text-center" href="/auth/login">
             LOGIN
           </Link>
         </div>
