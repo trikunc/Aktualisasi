@@ -37,7 +37,7 @@ function Header({ light }) {
             color: light ? 'black' : 'white',
           }}
         >
-          <Link className="no-underline font-medium text-lg text-center" href="/">
+          <Link className="no-underline font-medium text-lg text-center" href="/about">
             ABOUT
           </Link>
           <Link className="no-underline font-medium text-lg text-center" href="/controlling">
